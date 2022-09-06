@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xianbo.novelreader">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NovelReader"
+        android:usesCleartextTraffic="true">
+
+
+        <!--        <activity-->
+        <!--            android:name=".ui.activity.SplashActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:theme="@style/SplashTheme" />-->
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--        <activity android:name=".ui.activity.BookDiscussionActivity" />-->
+        <!--        <activity android:name=".ui.activity.DiscDetailActivity" />-->
+        <!--        <activity android:name=".ui.activity.BillboardActivity" />-->
+        <!--        <activity android:name=".ui.activity.BookSortActivity" />-->
+        <!--        <activity android:name=".ui.activity.BookSortListActivity"/>-->
+        <!--        <activity android:name=".ui.activity.SearchActivity" />-->
+        <!--        <activity android:name=".ui.activity.BookListActivity" />-->
+        <!--        <activity android:name=".ui.activity.BookListDetailActivity" />-->
+        <!--        <activity android:name=".ui.activity.BillBookActivity" />-->
+        <!--        <activity android:name=".ui.activity.OtherBillBookActivity" />-->
+        <!--        <activity android:name=".ui.activity.BookDetailActivity" />-->
+        <!--        <activity android:name=".ui.activity.DownloadActivity" />-->
+        <!--        <activity android:name=".ui.activity.ReadActivity" />-->
+        <!--        <activity android:name=".ui.activity.FileSystemActivity" />-->
+        <!--        <activity android:name=".ui.activity.CommunityActivity" />-->
+        <!--        <activity android:name=".ui.activity.MoreSettingActivity" />-->
+
+        <!--        <service android:name=".service.DownloadService" />-->
+    </application>
+    <!--        <service-->
+    <!--            android:name=".service.DownloadService"-->
+    <!--            android:enabled="true"-->
+    <!--            android:exported="true"></service>-->
+
+    <!--        <activity-->
+    <!--            android:name=".MainActivity"-->
+    <!--            android:exported="true"-->
+    <!--            android:label="@string/app_name"-->
+    <!--            android:theme="@style/Theme.NovelReader.NoActionBar">-->
+    <!--            <intent-filter>-->
+    <!--                <action android:name="android.intent.action.MAIN" />-->
+
+    <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+    <!--            </intent-filter>-->
+    <!--        </activity>-->
+    <!--</application>-->
+
+</manifest>

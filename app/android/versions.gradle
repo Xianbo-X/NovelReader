@@ -1,0 +1,85 @@
+ext.deps = [:]
+
+// 版本号
+def versions = [:]
+versions.gradle = '7.2.2'
+versions.android = '32.0.0'
+versions.glide = '4.13.2'
+versions.rxjava3 = '3.0.0'
+versions.rxandroid = "3.0.0"
+versions.okhttp = '4.10.0'
+versions.retrofit = '2.9.0'
+versions.stetho = '1.6.0'
+versions.greendao = '3.3.0'
+//versions.butterknife = '8.5.1' //deprecated, using viewBinding
+//versions.junit = '5.8.1'
+versions.junit = '4.13.2'
+versions.leakcanary = '2.9.1'
+
+// 依赖
+def deps = [:]
+
+// support
+def android =[:]
+android.plugin = "com.android.tools.build:gradle:$versions.gradle"
+//android.appcompat = "com.android.support:appcompat-v7:$versions.android" //Use AndroidX
+//android.design = "com.android.support:design:$versions.android"
+//android.support = "com.android.support:support-v4:$versions.android" //Use AndroidX instead
+//android.cardview = "com.android.support:cardview-v7:$versions.android"
+deps.android = android
+
+//// butterknife
+//def butterknife = [:]
+//butterknife.runtime = "com.jakewharton:butterknife:$versions.butterknife"
+//butterknife.compiler = "com.jakewharton:butterknife-compiler:$versions.butterknife"
+//deps.butterknife = butterknife
+
+// rxjava
+def reactivex = [:]
+reactivex.rxandroid = "io.reactivex.rxjava3:rxandroid:$versions.rxandroid"
+reactivex.rxjava3 = "io.reactivex.rxjava3:rxjava:$versions.rxjava3"
+deps.reactivex = reactivex
+
+// okhttp
+def okhttp = [:]
+okhttp.runtime = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+okhttp.logging = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+deps.okhttp = okhttp
+
+// retrofit
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.rxjava3 = "com.squareup.retrofit2:adapter-rxjava3:$versions.retrofit"
+deps.retrofit = retrofit
+
+// 图片加载库
+def glide = [:]
+glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+deps.glide = glide
+
+def greendao = [:]
+greendao.runtime = "org.greenrobot:greendao:$versions.greendao"
+greendao.plugin = "org.greenrobot:greendao-gradle-plugin:$versions.greendao"
+deps.greendao = greendao
+
+def testing = [:]
+testing.junit = "junit:junit:$versions.junit"
+//testing.junit = "org.junit.jupyter:junit-jupiter-api:$versions.junit"
+deps.testing = testing
+
+// 测试相关
+def leakcanary = [:]
+leakcanary.release = "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakcanary"
+leakcanary.debug = "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
+deps.leakcanary = leakcanary
+
+ext.deps = deps
+
+def build_versions = [:]
+build_versions.min_sdk = 28
+build_versions.target_sdk = 32
+build_versions.tools_version = '28.0.0'
+
+ext.build_versions = build_versions

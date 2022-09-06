@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+    id 'org.greenrobot.greendao'
+}
+
+android {
+    compileSdk build_versions.target_sdk
+
+    defaultConfig {
+        applicationId "com.xianbo.novelreader"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+
+greendao {
+    schemaVersion 3
+    daoPackage 'com.example.newbiechen.ireader.model.gen'
+    targetGenDir 'src/main/java'
+}
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment:2.5.1'
+    implementation 'androidx.navigation:navigation-ui:2.5.1'
+    implementation 'org.greenrobot:greendao:3.3.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation fileTree(includes: ['*.jar'],dir:'libs')
+
+    //RxJava
+    implementation deps.reactivex.rxandroid
+    implementation deps.reactivex.rxjava3
+
+    //Network
+    implementation deps.okhttp.runtime
+
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+    implementation deps.retrofit.rxjava3
+
+    //ImageLoader
+    implementation deps.glide.runtime
+
+    //ORM Database
+    implementation deps.greendao.runtime
+    testImplementation deps.testing.junit
+
+    //Android Leak Analysis
+    releaseImplementation deps.leakcanary.release
+    debugImplementation deps.leakcanary.debug
+
+    // AndroidTagGroup
+    implementation 'me.gujun.android.taggroup:library:1.4@aar'
+}
